@@ -1,4 +1,4 @@
-var path = require("path");
+var path = require('path');
 module.exports = {
     // absolute path
     context : path.resolve(__dirname, 'js'),
@@ -21,6 +21,7 @@ module.exports = {
         loaders : [
             {test : /\.html$/, loaders: ['raw'], exclude: /node_modules/},
             {test : /\.css$/, loaders: ['style', 'css']},
+            {test : /\.js$/ , loaders: ['babel', 'eslint'], exclude: /node_modules/}
         ]
     }
 };
