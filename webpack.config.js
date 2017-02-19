@@ -11,11 +11,16 @@ module.exports = {
     resolve: {
         modules : ['.','node_modules'],
         alias : {
-            backboneLocalstorage : 'backbone.localstorage/backbone.localStorage'
         }
     },
     // migration 1.x to 2.x, cannot omit the -loader
     resolveLoader : {
         moduleExtensions : ['-loader']
+    },
+    module : {
+        loaders : [
+            {test : /\.html$/, loaders: ['raw'], exclude: /node_modules/},
+            {test : /\.css$/, loaders: ['style', 'css']},
+        ]
     }
 };
